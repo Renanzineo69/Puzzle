@@ -10,6 +10,8 @@ body {
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: #fff;
     height: 100vh;
+    overflow: hidden; /* importante para impedir scroll com o GIF */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +24,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     animation: fadeInUp 1s ease-out;
+    z-index: 1; /* garante que o container fique abaixo do gif flutuante */
 }
 
 h1 {
@@ -68,15 +71,53 @@ button:hover {
     animation: scroll-text 30s linear infinite;
 }
 
+/* GIF FLOTANTE (DVD-like) */
+.gif-container {
+    position: fixed; /* permite movimento livre pela tela */
+    top: 100px;
+    left: 100px;
+    z-index: 1000;
+    width: 100px;
+    height: auto;
+}
+
+.dancing-gif {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.hover-text {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.gif-container:hover .hover-text {
+    opacity: 1;
+}
+
 @keyframes scroll-text {
     0% {
-        transform: translateX(-1000%); /* Começa do lado esquerdo */
+        transform: translateX(-1000%);
     }
     50% {
-        transform: translateX(1000%); /* Vai até o lado direito */
+        transform: translateX(1000%);
     }
     100% {
-        transform: translateX(-1000%); /* Retorna ao lado esquerdo */
+        transform: translateX(-1000%);
     }
 }
 

@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Puzzle Time!</title> <!-- Nome correto na aba -->
+    <title>Puzzle Time!</title>
     <link id="favicon" rel="icon" type="image/png" href="assets/favicons/p.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/favicon-rotator.js" defer></script>
+    <script src="assets/js/bouncing-cat.js" defer></script>
     <script src="assets/js/audio-handler.js" defer></script>
 </head>
 <body>
+    <!-- Container principal -->
     <div class="container">
         <h1>Hello there!</h1>
         <button id="botao-audio">Play Sound</button>
@@ -20,7 +22,13 @@
         <p class="hidden-text">Source code is power 🧠</p>
     </div>
 
-    <!-- Floating text -->
+    <!-- GIF fora da div principal -->
+    <div class="gif-container">
+        <img src="assets/img/dancing-cat.gif" alt="Dancing Cat" class="dancing-gif">
+        <div class="hover-text">I'm dancing :D</div>
+    </div>
+
+    <!-- Texto flutuante -->
     <div class="scrolling-text">
         The source for all things lay hidden within
     </div>
