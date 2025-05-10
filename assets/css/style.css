@@ -56,6 +56,30 @@ button:hover {
     overflow: hidden;
 }
 
+/* Texto rolante */
+.scrolling-text {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    animation: scroll-text 10s linear infinite;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(-300%); /* Começa do lado esquerdo */
+    }
+    50% {
+        transform: translateX(300%); /* Vai até o lado direito */
+    }
+    100% {
+        transform: translateX(-300%); /* Retorna ao lado esquerdo */
+    }
+}
+
 /* Animações */
 @keyframes fadeInUp {
     0% {
